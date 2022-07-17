@@ -1,0 +1,152 @@
+/* importing google font*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #4d59fb;
+}
+.wrapper{
+    width: 450px;
+    background: #fff;
+    border-radius: 7px;
+    padding: 28px 28px 45px;
+}
+.wrapper header{
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+}
+.wrapper .search{
+    position: relative;
+    margin: 35px 0 18px;
+}
+.search input{
+    height: 50px;
+    width: 100%;
+    font-size: 16px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #999;
+    padding: 0 42px;
+}
+.search input::placeholder{
+    color: #b8b8b8;
+}
+.search input:focus{
+    border: 2px solid #4d59fb;
+}
+.search :where(i,span){
+    position: absolute;
+    color: #999;
+    transform: translate(-50%);
+}
+.search i{
+    top: 35%;
+    left: 18px;
+    font-size: 16px;
+    pointer-events: none;
+}
+.search input:focus ~ i{
+    color: #4d59fb;
+}
+.search span{
+    top: 30%;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+/*once user starts typing, display close icon */
+.search input:valid ~ span{
+    display: block;
+}
+.wrapper .info-text{
+    font-size: 13px;
+    color: #9a9a9a;
+}
+.wrapper.active .info-text{
+    display: none;
+}
+.info-text span{
+    font-weight: 500;
+}
+.wrapper ul li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+    padding-bottom: 17px;
+    border-bottom: 1px solid #ccc;
+}
+.wrapper ul{
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+.wrapper.active ul{
+    height: 303px;
+    opacity: 1;
+}
+ul li:last-child{
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+ul .word p{
+    font-size: 22px;
+    font-weight: 500;
+}
+ul .word span{
+    font-size: 12px;
+    color: #989898;
+}
+ul .word i{
+    font-size: 15px;
+    color: #989898;
+    cursor: pointer;
+}
+ul .content{
+    max-height: 215px;
+    overflow-y: auto;
+}
+ul .content::-webkit-scrollbar{
+    width: 0;
+}
+.content li .details{
+    padding-left: 10px;
+    border-left: 3px solid #4d59fb;
+    border-radius: 4px 0 0 4px;
+}
+.content li .details p{
+    font-size: 17px;
+    font-weight: 500;
+}
+.content li .details span{
+    font-size: 15px;
+    color: #7e7e7e;
+}
+.synonyms .details .list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+.synonyms .details .list span{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+@media screen and (max-width:567px){
+    .wrapper{
+        width: 80%;
+        padding: 20px 20px 30px;
+    } 
+}
